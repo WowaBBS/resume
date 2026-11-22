@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 """Assemble one resume from its folder and build the DOCX.
 
 A resume folder holds topic files (`NN_slug.md`) and one experience folder
@@ -85,7 +85,7 @@ def main(argv):
     out_dir = BUILD / folder.name
     out_dir.mkdir(parents=True, exist_ok=True)
     md_path = out_dir / 'resume.md'
-    md_path.write_text(text, encoding='utf-8')
+    md_path.write_text(text, encoding='utf-8', newline='\n')
     print(f'{md_path}: {len(parts)} source files, {len(text)} chars')
 
     if '--readme' in argv:
@@ -93,7 +93,7 @@ def main(argv):
         en_folder = target.parent / 'resume-en'
         if not en_folder.is_dir():
             en_folder = folder
-        target.write_text(readme_text(folder, en_folder), encoding='utf-8')
+        target.write_text(readme_text(folder, en_folder), encoding='utf-8', newline='\n')
         print(f'{target}: README generated')
 
     if '--docx' in argv:
