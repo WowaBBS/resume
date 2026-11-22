@@ -1,101 +1,102 @@
-# Владимир Савин
+**English** · [Русский](README.ru.md)
+
+# Vladimir Savin
 
 **Tech Lead / Senior C++ Programmer — Unreal Engine**
 
-Москва · удалённо (Россия / Европа) · готов к командировкам
-+7 917 143-51-22 · wowabbs+hh1@gmail.com · Telegram @wowabb · github.com/WowaBBS
+Remote (EU / worldwide) · open to occasional travel · +7 917 143-51-22 · wowabbs+hh1@gmail.com · Telegram @wowabb · github.com/WowaBBS
 
 ---
 
-## О себе
+## Summary
 
-Tech Lead / Senior C++ Programmer: 25 лет в коммерческой разработке, 14 лет в играх, 7 лет технического руководства на Unreal Engine 5. Отвечал за архитектуру ~45 подсистем, команду до 30 человек (6 C++ / 15 Blueprint) и релиз на пяти платформах. Делаю gameplay- и клиент-серверные системы, инструменты для разработчиков и бэкенд сетевых игр. Быстро разбираюсь в чужом коде и переделываю legacy без переписывания проекта.
+Tech Lead / Senior C++ Programmer with 25 years in commercial software and 14 years in game development, including 7 years of technical leadership on Unreal Engine 5. Owned the architecture of ~45 subsystems, led a team of up to 30 engineers (6 C++ / 15 Blueprint) and shipped to five platforms. Strong in gameplay systems, client–server networking, developer tools, and backend services for online games. Comfortable diving into large unfamiliar codebases and refactoring legacy code without a rewrite.
 
-## Ключевые компетенции
+## Core Skills
 
 - C++ (11/14/17/20), Unreal Engine 4/5, Blueprint, C#, Lua, PHP
-- Gameplay: инвентарь, параметры и модификаторы, сохранения, GUI, взаимодействия
-- Клиент-сервер: репликация, серверная валидация, античит, цифровые подписи
-- Бэкенд: оркестрация игровых серверов, матчмейкинг, метрики, аналитика, мониторинг
-- Инструменты: профайлеры, редакторы, ImGui, системы логирования и сборки
-- Кроссплатформенность: Windows, Linux, macOS, iOS, Android; CI/CD, Docker, Kubernetes
-- Практики: code review, автотесты, менторинг, техническое интервьюирование
+- Gameplay: inventory, attributes and modifiers, save/load, UI, interactions
+- Networking: replication, server-side validation, anti-cheat, digital signatures
+- Backend: game server orchestration, matchmaking, metrics, analytics, monitoring
+- Tooling: profilers, editors, ImGui, logging and build systems
+- Cross-platform: Windows, Linux, macOS, iOS, Android; CI/CD, Docker, Kubernetes
+- Practices: code review, automated tests, mentoring, technical interviews
 
-## Опыт работы
+## Experience
 
-### ПАН ГЕЙМС — Tech Lead / Senior C++ Programmer
-Июнь 2019 — декабрь 2025 · 6 лет 7 месяцев · **BULLET YEETERS** (Steam, Epic Games Store)
+### PAN GAMES — Tech Lead / Senior C++ Programmer
+June 2019 – December 2025 · **BULLET YEETERS** (Steam, Epic Games Store)
 
-Стек: C++, Unreal Engine 5, Blueprint, PHP, MySQL, C#, PlayFab, Azure, Docker, Kubernetes, CI/CD.
+Stack: C++, Unreal Engine 5, Blueprint, PHP, MySQL, C#, PlayFab, Azure, Docker, Kubernetes, CI/CD.
 
-- Спроектировал архитектуру сетевой игры и границы ~45 подсистем; вёл команду до 30 человек, проводил code review, технические собеседования и менторинг.
-- Обеспечил кроссплатформенность и сборку на Windows, Linux, macOS, iOS и Android: миграция между версиями Unreal Engine, обновление сторонних интеграций, CI/CD-сборка под каждый платформенный таргет.
-- Разработал реплицируемый инвентарь: полный функционал системы из INSOMNIA при минимизации сетевого трафика.
-- Разработал JSON-сериализацию на рефлексии Unreal Engine (аналог nlohmann/json с учётом `UStruct`): ручной код сериализации структур не нужен.
-- Создал слой интеграции клиента с бэкендом — единый API для геймдев-разработчиков.
-- Реализовал систему загрузки дополнительного контента в обход ограничений штатного пайплайна UE, а также предзагрузку и отложенную загрузку ассетов против фризов и перерасхода памяти.
-- Разработал систему логирования: рефлексия сложных структур, уровни по подсистемам в релизе и редакторе, источники (файл, редактор, метрики), асинхронный и синхронный режимы.
-- Разработал бэкенд: оркестратор игровых серверов (жизненный цикл, прогноз спроса, доставка дистрибутивов, сбор логов, утилизация), матчмейкинг (регион, команды, параметры), инвентарь, мониторинг, push-уведомления.
-- Разработал античит и серверную валидацию по принципу «never trust the client»: набор правил, цифровые подписи, дублирование проверок на клиенте ради отсутствия лагов.
-- Создал систему игровых метрик и аналитики с когортным анализом и realtime-обнаружением багов на первых пользователях; работала параллельно с GameAnalytics, Firebase и MMP.
-- **Масштаб:** 15 матчей/с по 20 игроков; 10 000 одновременных игроков (архитектура — 100 000); 34 оркестратора и 30 игровых серверов на оркестратор.
+- Designed the architecture of the networked game and the boundaries of ~45 subsystems; led a team of up to 30 people, ran code reviews, technical interviews, and mentoring.
+- Delivered cross-platform builds for Windows, Linux, macOS, iOS, and Android, including migration between Unreal Engine versions and third-party integrations via CI/CD.
+- Built a replicated inventory with the full feature set of the INSOMNIA system while minimizing network traffic.
+- Implemented JSON serialization on Unreal Engine reflection (an `nlohmann/json` analogue aware of `UStruct`), removing hand-written serialization code.
+- Built the client–backend integration layer used by all gameplay developers.
+- Implemented additional content loading beyond the stock UE pipeline, plus asset preloading and deferred loading to eliminate hitches and reduce memory use.
+- Built the logging system: reflection-based output of complex types, per-subsystem verbosity in shipping and editor builds, multiple sinks (file, editor, metrics), async and sync modes.
+- Built backend services: game server orchestrator (full lifecycle, demand prediction, build delivery, log collection, scale-down), matchmaking (region, teams, parameters), inventory, monitoring, push notifications.
+- Built anti-cheat and server-side validation on a "never trust the client" principle: rule sets, digital signatures, duplicated client-side validation to avoid latency.
+- Built the gameplay metrics and analytics platform with cohort analysis and real-time detection of bugs on first users, running alongside GameAnalytics, Firebase, and MMPs.
+- **Scale:** 15 matches/second with 20 players each; 10,000 concurrent players (architected for 100,000); 34 orchestrators and 30 game servers per orchestrator.
 
 ### Alersteam — Senior C++ Programmer
-Сентябрь 2018 — август 2023 · 5 лет · **Exoplanet First Contact** (Steam) · совмещение
+September 2018 – August 2023 · **Exoplanet First Contact** (Steam) · concurrent project
 
-Стек: C++, OpenGL, Lua, PHP, CMake.
+Stack: C++, OpenGL, Lua, PHP, CMake.
 
-- Разработал WBuild.php — систему сборки: полная сборка из всех исходников во всех режимах за минуты вместо часов ([github.com/WowaBBS/WBuild.php](https://github.com/WowaBBS/WBuild.php)).
-- Создал профайлер с минимальными накладными расходами и интерактивным деревом вызовов; по его данным устранены узкие места.
-- Создал Debug3D для визуализации костей, физики, зон взаимодействия и scatterer; инструменты на ImGui для отладки и редактирования контента.
-- Разработал систему логирования с управлением источниками по образцу Unreal Engine и систему автоматического размещения объектов.
-- Интегрировал Wwise, RenderDoc, CrashFix, HBAO, Tracy, Recast, Umbra, Cal3D, Theora, DevIL.
+- Built WBuild.php, a build system that runs a full build from all sources in every mode in minutes instead of hours ([github.com/WowaBBS/WBuild.php](https://github.com/WowaBBS/WBuild.php)).
+- Built a low-overhead profiler with an interactive call tree; its data led to removing multiple bottlenecks.
+- Built Debug3D for visualizing bones, physics, interaction zones, and scatterer, plus ImGui tools for debugging and content editing.
+- Built the logging system with UE-style source management and an automatic object scatter system.
+- Integrated Wwise, RenderDoc, CrashFix, HBAO, Tracy, Recast, Umbra, Cal3D, Theora, DevIL.
 
-### Студия МОНО — Ведущий инженер-программист / Tech Lead
-Январь 2011 — декабрь 2018 · 8 лет · **INSOMNIA: The Ark** (Steam)
+### Studio MONO — Lead Programmer / Tech Lead
+January 2011 – December 2018 · **INSOMNIA: The Ark** (Steam)
 
-Стек: Unreal Engine, Ogre3D, Bullet, C++, Blueprint, Lua, C#, PHP, шейдеры.
+Stack: Unreal Engine, Ogre3D, Bullet, C++, Blueprint, Lua, C#, PHP, shaders.
 
-- **Инвентарь:** логический инвентарь с вложенными контейнерами, слотами, правилами поведения предметов (включая дебаффы, эффекты, умения) и интеграцией с параметрами, сохранениями и GUI.
-- **Параметры и модификаторы:** система расчёта параметров с учётом всех модификаторов, отладочной выдачей хода расчёта и защитой от читтинга.
-- **Сохранения:** собственный сжатый формат (JSON + бинарная упаковка) и ротация слотов; сохранение и загрузка менее 100 мс.
-- **GUI:** управление состояниями интерфейса на динамическом конечном автомате — разработчики правят свои части интерфейса без взаимных конфликтов.
-- **Взаимодействия:** лут, торговля, верстаки, ремонт, выключатели, лестницы.
-- Разработал движковую часть на Ogre3D: освещение на шейдерах, система частиц производительнее штатной, физика на Bullet, конечный автомат анимаций, ИИ на весах, плагин экспорта из Blender, сборка ассетов с LOD, дельта-обновления, сетевая игра с пассивной ролью сервера.
-- Вёл техническую документацию, консультировал разработчиков, проводил code review, делал внутренние инструменты и автотесты игровых сценариев.
-- Публикации: «Как мы перестали бояться Огра и начали делать на нем игру» — [habr.com/ru/companies/mono/articles/228139](https://habr.com/ru/companies/mono/articles/228139/)
+- **Inventory:** logical inventory with nested containers, slots, item behavior rules (including debuffs, effects, abilities) and integration with attributes, saves, and UI.
+- **Attributes and modifiers:** calculation system covering all modifiers, with a calculation trace for debugging and anti-cheat protection.
+- **Saves:** custom compressed format (JSON plus packed binary) with save-slot rotation; save and load under 100 ms.
+- **UI:** interface state management on a dynamic finite state machine, letting developers change their own parts without conflicts.
+- **Interactions:** loot, trading, workbenches, repair, switches, ladders.
+- Built the Ogre3D engine layer: shader-based lighting, a particle system faster than the stock one, Bullet physics, an animation FSM, weighted AI, a Blender export plugin, asset building with LOD generation, delta updates, and networked play with a passive server.
+- Owned technical documentation, developer consulting, code review, internal tools, and automated gameplay tests.
+- Publications: "How we stopped being afraid of Ogre and started making a game on it" — [habr.com/ru/companies/mono/articles/228139](https://habr.com/ru/companies/mono/articles/228139/)
 
-### NetCracker — Ведущий инженер-программист
-Июнь 2010 — январь 2015 · 4 года 8 месяцев · BSS/OSS для телекома · совмещение
+### NetCracker — Lead Software Engineer
+June 2010 – January 2015 · BSS/OSS for telecom · concurrent project
 
-- Оптимизировал запрос к БД для отчёта: построение ускорилось с нескольких дней до нескольких минут.
-- Рефакторил генератор PDF-схемы сети в архитектуру из 250+ классов вместо класса со статическими методами — без потери функциональности и с возможностью развития.
-- Разработал библиотеку mock-тестирования для автотестов других команд и систему учёта и аудита грантов с анализом графа их наследования.
+- Optimized a database query behind a report: generation time dropped from days to minutes.
+- Refactored a PDF network-schema generator into 250+ classes instead of a class of static methods, keeping functionality and enabling extension.
+- Built a mock-testing library so other teams could write their own automated tests, and a grant auditing system that analyzes the grant inheritance graph.
 
-### Ранее, 2000–2010
+### Earlier, 2000–2010
 
-- **СамГУ, Отдел дистанционных образовательных технологий** (2004–2010): сервер дистанционного обучения, конструктор электронных учебников (руководил созданием десяти), видеоконференции, система подготовки к ЕГЭ по физике.
-- **СамГУ, ИАЦ** (2005–2007): собственная CMS, база данных выпускников, несколько десятков сайтов университета. **Преподаватель кафедры БИС** (2005–2007): LabVIEW, C++, TCP/IP, криптопротоколы.
-- **VeloWaver** (2004–2005): кроссплатформенная игровая библиотека C++ для Win32, Windows CE, Symbian; несколько игр.
-- **Pixel** (2003–2004): стек TCP/IP с нуля (IP, TCP, UDP, ICMP, DHCP, ARP, NTP, DNS) под ОС Vigil, протоколы шифрования, авторизации и удалённого управления для системы видеонаблюдения GUARD.
-- **Active Solutions** (2000–2001): PHP-фреймворк для сайтов, вёрстка, проектирование БД.
+- **Samara State University, Distance Learning Department** (2004–2010): e-learning server, textbook builder (led creation of ten textbooks), video conferencing, physics exam-prep system.
+- **Samara State University, IT Analytics Center** (2005–2007): in-house CMS, alumni database, dozens of university websites. **Lecturer** (2005–2007): LabVIEW, C++, TCP/IP, cryptographic protocols.
+- **VeloWaver** (2004–2005): cross-platform C++ game library for Win32, Windows CE, Symbian; several games.
+- **Pixel** (2003–2004): TCP/IP stack from scratch (IP, TCP, UDP, ICMP, DHCP, ARP, NTP, DNS) for the Vigil OS; encryption, authorization, and remote control protocols for a video surveillance system.
+- **Active Solutions** (2000–2001): PHP web framework, markup, database design.
 
-## Проекты
+## Projects
 
 **BULLET YEETERS** — [Steam](https://store.steampowered.com/app/3624020/BULLET_YEETERS) · [Epic Games Store](https://store.epicgames.com/en-US/p/bullet-yeeters-438176)
 **INSOMNIA: The Ark** — [Steam](https://store.steampowered.com/app/783170/INSOMNIA_The_Ark)
 **Exoplanet First Contact** — [Steam](https://store.steampowered.com/app/531660/Exoplanet_First_Contact/)
-**GEngine** — участие в реверс-инжиниринге движка Gothic. **WBuild.php** — [github.com/WowaBBS/WBuild.php](https://github.com/WowaBBS/WBuild.php)
+**GEngine** — contributor to the Gothic engine reverse-engineering project. **WBuild.php** — [github.com/WowaBBS/WBuild.php](https://github.com/WowaBBS/WBuild.php)
 
-## Образование
+## Education
 
-Самарский государственный университет, 1999–2005. Механико-математический факультет, «Компьютерная безопасность». Высшее.
+Samara State University, 1999–2005. Faculty of Mechanics and Mathematics, Computer Security. MSc equivalent.
 
-**Языки:** русский — родной; английский — техническая документация, переписка, работа с зарубежными SDK (Wwise, Umbra, PlayFab, Azure).
+**Languages:** Russian — native; English — technical documentation, written communication, work with international SDKs (Wwise, Umbra, PlayFab, Azure).
 
 ---
 
-PDF: [savin_vladimir_cv.pdf](savin_vladimir_cv.pdf) · [savin_vladimir_cv_en.pdf](savin_vladimir_cv_en.pdf)
+PDF: [savin_vladimir_cv_en.pdf](savin_vladimir_cv_en.pdf) · [savin_vladimir_cv.pdf](savin_vladimir_cv.pdf)
 
-_Текст собран из `resume/` и `resume-en/`; PDF пересобирается автоматически при каждом
-изменении этих файлов._
+_Sources: `resume/` (ru), `resume-en/` (en). The PDFs are rebuilt automatically
+whenever these files change._

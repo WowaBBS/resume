@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """Assemble one resume from its folder and build the DOCX.
 
 A resume folder holds topic files (`NN_slug.md`) and one experience folder
@@ -25,14 +25,30 @@ ROOT = Path(__file__).resolve().parent.parent
 BUILD = ROOT / 'build'
 GENERATED = {'resume.md', 'resume.docx', 'resume.pdf'}
 
+README_HEAD = {
+    'en': '**English** · [Русский]({alt})',
+    'ru': '**Русский** · [English]({alt})',
+}
+
+PDF_RU = '[savin_vladimir_cv.pdf](savin_vladimir_cv.pdf)'
+PDF_EN = '[savin_vladimir_cv_en.pdf](savin_vladimir_cv_en.pdf)'
+
 README_FOOTER = """
 ---
 
-PDF: [{cv}]({cv}) · [{cv_en}]({cv_en})
+PDF: {first} · {second}
 
-_Текст собран из `{ru}/` и `{en}/`; PDF пересобирается автоматически при каждом
-изменении этих файлов._
+_Sources: `resume/` (ru), `resume-en/` (en). The PDFs are rebuilt automatically
+whenever these files change._
 """
+
+
+def readme_text(folder, lang, alt):
+    text, _ = assemble(folder)
+    first, second = (PDF_EN, PDF_RU) if lang == 'en' else (PDF_RU, PDF_EN)
+    head = README_HEAD[lang].format(alt=alt)
+    footer = README_FOOTER.format(first=first, second=second)
+    return head + '\n\n' + text.rstrip('\n') + '\n' + footer
 
 
 def is_topic(name):
@@ -66,20 +82,9 @@ def assemble(folder):
     return '\n\n'.join(chunks) + '\n', parts
 
 
-def readme_text(ru_folder, en_folder):
-    text, _ = assemble(ru_folder)
-    footer = README_FOOTER.format(
-        cv='savin_vladimir_cv.pdf',
-        cv_en='savin_vladimir_cv_en.pdf',
-        ru=ru_folder.name,
-        en=en_folder.name,
-    )
-    return text.rstrip('\n') + '\n' + footer
-
-
 def main(argv):
     if len(argv) < 2:
-        raise SystemExit('usage: build_resume.py <resume-folder> [--docx] [--readme <path>]')
+        raise SystemExit('usage: build_resume.py <resume-folder> [--docx] [--readme <path> --lang ru|en --alt <file>]')
     folder = Path(argv[1]).resolve()
     text, parts = assemble(folder)
     out_dir = BUILD / folder.name
@@ -90,11 +95,10 @@ def main(argv):
 
     if '--readme' in argv:
         target = Path(argv[argv.index('--readme') + 1]).resolve()
-        en_folder = target.parent / 'resume-en'
-        if not en_folder.is_dir():
-            en_folder = folder
-        target.write_text(readme_text(folder, en_folder), encoding='utf-8', newline='\n')
-        print(f'{target}: README generated')
+        lang = argv[argv.index('--lang') + 1] if '--lang' in argv else 'ru'
+        alt = argv[argv.index('--alt') + 1] if '--alt' in argv else 'README.md'
+        target.write_text(readme_text(folder, lang, alt), encoding='utf-8', newline='\n')
+        print(f'{target}: README generated ({lang})')
 
     if '--docx' in argv:
         docx_path = out_dir / 'resume.docx'
