@@ -61,18 +61,20 @@ def readme_text(folder, lang, alt):
     if sep:
         head_lines = [l for l in head_text.split('\n') if l.strip() != '---']
         text = '\n'.join(head_lines).rstrip() + '\n\n## ' + rest
-    # GitHub strips CSS, so a per-element "left here, right there" needs a table
-    # (and its borders look heavy). A whole right-aligned line does work: `align`
-    # on a paragraph is kept. Inside HTML the markdown is not parsed, so links are
-    # plain <a> tags.
+    # One right-aligned line: switcher, a wide gap, then the documents.
+    # GitHub strips CSS, so the gap is made of non-breaking spaces — it depends on
+    # the window width, so the constant below is a knob, not a fixed layout.
+    GAP = 30  # how many non-breaking spaces between the two groups
     if lang == 'ru':
         line = ('<p align="right">'
-                '<b>Русский</b> · <a href="README.md">English</a> · '
+                '<b>Русский</b> · <a href="README.md">English</a>'
+                + '&nbsp;' * GAP +
                 '<a href="savin_vladimir_cv.pdf">PDF</a> · '
                 '<a href="savin_vladimir_cv.docx">DOCX</a></p>')
     else:
         line = ('<p align="right">'
-                '<a href="README.ru.md">Русский</a> · <b>English</b> · '
+                '<a href="README.ru.md">Русский</a> · <b>English</b>'
+                + '&nbsp;' * GAP +
                 '<a href="savin_vladimir_cv_en.pdf">PDF</a> · '
                 '<a href="savin_vladimir_cv_en.docx">DOCX</a></p>')
     head = line

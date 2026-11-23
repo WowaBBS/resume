@@ -1,4 +1,4 @@
-<p align="right"><b>Русский</b> · <a href="README.md">English</a> · <a href="savin_vladimir_cv.pdf">PDF</a> · <a href="savin_vladimir_cv.docx">DOCX</a></p>
+<p align="right"><b>Русский</b> · <a href="README.md">English</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="savin_vladimir_cv.pdf">PDF</a> · <a href="savin_vladimir_cv.docx">DOCX</a></p>
 
 # Владимир Савин
 
