@@ -10,7 +10,7 @@ Remote (EU / worldwide) · open to occasional travel · +7 917 143-51-22 · wowa
 
 ## Summary
 
-Tech Lead / Senior C++ Programmer with 25 years in commercial software and 14 years in game development. Credited as Lead Programmer on INSOMNIA: The Ark, then 6 years 7 months as Tech Lead at PAN GAMES on Unreal Engine (UE4 → UE5). Owned the architecture of ~45 subsystems, led a team of up to 30 engineers (6 C++ / 15 Blueprint) and shipped to five platforms. Strong in gameplay systems, client–server networking, developer tools, and backend services for online games. Comfortable diving into large unfamiliar codebases and refactoring legacy code without a rewrite.
+Tech Lead / Senior C++ Programmer with 25 years in commercial software and 14 years in game development. Credited as Lead Programmer on INSOMNIA: The Ark, then 6 years 7 months as Tech Lead at PAN GAMES on Unreal Engine (UE4 → UE5). Owned the architecture of ~45 subsystems, led a team of up to 30 engineers (6 C++ / 15 Blueprint) and shipped to five platforms. Strong in gameplay systems, client–server networking, developer tools, and backend services for online games. Comfortable diving into large unfamiliar codebases and refactoring legacy code without a rewrite. Outside work: reverse engineering the Gothic engine (contributor to GEngine).
 
 ## Core Skills
 
@@ -46,6 +46,8 @@ September 2018 – August 2023 · **Exoplanet First Contact** (Steam) · concurr
 
 Stack: C++, OpenGL, Lua, PHP, CMake.
 
+Scope: engine layer and developer tooling — build system, profiler, debug visualisation, third-party integrations.
+
 - Built WBuild.php, a build system that runs a full build from all sources in every mode in minutes instead of hours ([github.com/WowaBBS/WBuild.php](https://github.com/WowaBBS/WBuild.php)).
 - Built a low-overhead profiler with an interactive call tree; its data led to removing multiple bottlenecks.
 - Built Debug3D for visualizing bones, physics, interaction zones, and scatterer, plus ImGui tools for debugging and content editing.
@@ -62,12 +64,14 @@ Stack: Unreal Engine, Ogre3D, Bullet, C++, Blueprint, Lua, C#, PHP, shaders.
 - **Saves:** custom compressed format (JSON plus packed binary) with save-slot rotation; save and load under 100 ms.
 - **UI:** interface state management on a dynamic finite state machine, letting developers change their own parts without conflicts.
 - **Interactions:** loot, trading, workbenches, repair, switches, ladders.
-- Built the Ogre3D engine layer: shader-based lighting, a particle system faster than the stock one, Bullet physics, an animation FSM, weighted AI, a Blender export plugin, asset building with LOD generation, delta updates, and networked play with a passive server.
+- Ogre3D engine layer: shader-based lighting, particles, physics, animation, AI, Blender export plugin, asset building with LOD.
 - Owned technical documentation, developer consulting, code review, internal tools, and automated gameplay tests.
 - Publications: "How we stopped being afraid of Ogre and started making a game on it" — [habr.com/ru/companies/mono/articles/228139](https://habr.com/ru/companies/mono/articles/228139/)
 
 ### NetCracker — Lead Software Engineer
 June 2010 – January 2015 · BSS/OSS for telecom · concurrent project
+
+Stack: Java, Oracle, PostgreSQL, Spring, JUnit, CI/CD.
 
 - Optimized a database query behind a report: generation time dropped from days to minutes.
 - Refactored a PDF network-schema generator into 250+ classes instead of a class of static methods, keeping functionality and enabling extension.
