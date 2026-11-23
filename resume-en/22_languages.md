@@ -1,1 +1,1 @@
-**Languages:** Russian — native; English — technical documentation, written communication, work with international SDKs (Wwise, Umbra, PlayFab, Azure).
+**Languages:** Russian — native; English — **B2** (technical documentation and written communication: confident; limited speaking practice).

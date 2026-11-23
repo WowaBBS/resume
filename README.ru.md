@@ -5,13 +5,14 @@
 **Tech Lead / Senior C++ Programmer — Unreal Engine**
 
 Москва · удалённо (Россия / Европа) · готов к командировкам
-+7 917 143-51-22 · wowabbs+hh1@gmail.com · Telegram @wowabb · github.com/WowaBBS
++7 917 143-51-22 · wowabbs+hh1@gmail.com
+Telegram @wowabb · github.com/WowaBBS
 
 ---
 
 ## О себе
 
-Tech Lead / Senior C++ Programmer: 25 лет в коммерческой разработке, 14 лет в играх, 7 лет технического руководства на Unreal Engine 5. Отвечал за архитектуру ~45 подсистем, команду до 30 человек (6 C++ / 15 Blueprint) и релиз на пяти платформах. Делаю gameplay- и клиент-серверные системы, инструменты для разработчиков и бэкенд сетевых игр. Быстро разбираюсь в чужом коде и переделываю legacy без переписывания проекта.
+Tech Lead / Senior C++ Programmer: 25 лет в коммерческой разработке, 14 лет в играх. В титрах INSOMNIA: The Ark — Lead Programmer, 6 лет 7 месяцев — Tech Lead в PAN GAMES на Unreal Engine (UE4 → UE5). Отвечал за архитектуру ~45 подсистем, команду до 30 человек (6 C++ / 15 Blueprint) и релиз на пяти платформах. Делаю gameplay- и клиент-серверные системы, инструменты для разработчиков и бэкенд сетевых игр. Быстро разбираюсь в чужом коде и переделываю legacy без переписывания проекта.
 
 ## Ключевые компетенции
 
@@ -85,7 +86,7 @@ Tech Lead / Senior C++ Programmer: 25 лет в коммерческой раз�
 ## Проекты
 
 **BULLET YEETERS** — [Steam](https://store.steampowered.com/app/3624020/BULLET_YEETERS) · [Epic Games Store](https://store.epicgames.com/en-US/p/bullet-yeeters-438176)
-**INSOMNIA: The Ark** — [Steam](https://store.steampowered.com/app/783170/INSOMNIA_The_Ark)
+**INSOMNIA: The Ark** — [Steam](https://store.steampowered.com/app/783170/INSOMNIA_The_Ark) · [титры: Lead Programmer](https://www.mobygames.com/game/114363/insomnia-the-ark/credits/windows/)
 **Exoplanet First Contact** — [Steam](https://store.steampowered.com/app/531660/Exoplanet_First_Contact/)
 **GEngine** — участие в реверс-инжиниринге движка Gothic. **WBuild.php** — [github.com/WowaBBS/WBuild.php](https://github.com/WowaBBS/WBuild.php)
 
@@ -93,7 +94,7 @@ Tech Lead / Senior C++ Programmer: 25 лет в коммерческой раз�
 
 Самарский государственный университет, 1999–2005. Механико-математический факультет, «Компьютерная безопасность». Высшее.
 
-**Языки:** русский — родной; английский — техническая документация, переписка, работа с зарубежными SDK (Wwise, Umbra, PlayFab, Azure).
+**Языки:** русский — родной; английский — **B2** (документация и переписка — уверенно, разговорная практика ограниченная).
 
 ---
 

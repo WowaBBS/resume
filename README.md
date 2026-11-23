@@ -10,7 +10,7 @@ Remote (EU / worldwide) · open to occasional travel · +7 917 143-51-22 · wowa
 
 ## Summary
 
-Tech Lead / Senior C++ Programmer with 25 years in commercial software and 14 years in game development, including 7 years of technical leadership on Unreal Engine 5. Owned the architecture of ~45 subsystems, led a team of up to 30 engineers (6 C++ / 15 Blueprint) and shipped to five platforms. Strong in gameplay systems, client–server networking, developer tools, and backend services for online games. Comfortable diving into large unfamiliar codebases and refactoring legacy code without a rewrite.
+Tech Lead / Senior C++ Programmer with 25 years in commercial software and 14 years in game development. Credited as Lead Programmer on INSOMNIA: The Ark, then 6 years 7 months as Tech Lead at PAN GAMES on Unreal Engine (UE4 → UE5). Owned the architecture of ~45 subsystems, led a team of up to 30 engineers (6 C++ / 15 Blueprint) and shipped to five platforms. Strong in gameplay systems, client–server networking, developer tools, and backend services for online games. Comfortable diving into large unfamiliar codebases and refactoring legacy code without a rewrite.
 
 ## Core Skills
 
@@ -84,7 +84,7 @@ June 2010 – January 2015 · BSS/OSS for telecom · concurrent project
 ## Projects
 
 **BULLET YEETERS** — [Steam](https://store.steampowered.com/app/3624020/BULLET_YEETERS) · [Epic Games Store](https://store.epicgames.com/en-US/p/bullet-yeeters-438176)
-**INSOMNIA: The Ark** — [Steam](https://store.steampowered.com/app/783170/INSOMNIA_The_Ark)
+**INSOMNIA: The Ark** — [Steam](https://store.steampowered.com/app/783170/INSOMNIA_The_Ark) · [credits: Lead Programmer](https://www.mobygames.com/game/114363/insomnia-the-ark/credits/windows/)
 **Exoplanet First Contact** — [Steam](https://store.steampowered.com/app/531660/Exoplanet_First_Contact/)
 **GEngine** — contributor to the Gothic engine reverse-engineering project. **WBuild.php** — [github.com/WowaBBS/WBuild.php](https://github.com/WowaBBS/WBuild.php)
 
@@ -92,7 +92,7 @@ June 2010 – January 2015 · BSS/OSS for telecom · concurrent project
 
 Samara State University, 1999–2005. Faculty of Mechanics and Mathematics, Computer Security. MSc equivalent.
 
-**Languages:** Russian — native; English — technical documentation, written communication, work with international SDKs (Wwise, Umbra, PlayFab, Azure).
+**Languages:** Russian — native; English — **B2** (technical documentation and written communication: confident; limited speaking practice).
 
 ---
 

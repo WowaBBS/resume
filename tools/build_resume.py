@@ -45,6 +45,8 @@ whenever these files change._
 
 def readme_text(folder, lang, alt):
     text, _ = assemble(folder)
+    # The photo directive carries a local absolute path — keep it out of README.
+    text = '\n'.join(l for l in text.split('\n') if not l.strip().startswith('<!-- photo:'))
     first, second = (PDF_EN, PDF_RU) if lang == 'en' else (PDF_RU, PDF_EN)
     head = README_HEAD[lang].format(alt=alt)
     footer = README_FOOTER.format(first=first, second=second)
@@ -79,7 +81,17 @@ def assemble(folder):
     if not parts:
         raise SystemExit(f'no markdown sources in {folder}')
     chunks = [p.read_text(encoding='utf-8').strip('\n') for _, p in parts]
-    return '\n\n'.join(chunks) + '\n', parts
+    text = '\n\n'.join(chunks) + '\n'
+    # `<!-- photo: name.jpg -->` is relative to the resume folder; make it absolute
+    # so the assembled copy can live in build/ and still find the picture.
+    def absolute(m):
+        candidate = Path(m.group(1).strip())
+        if not candidate.is_absolute():
+            candidate = (folder / candidate).resolve()
+        return f'<!-- photo: {candidate} -->'
+
+    text = re.sub(r'<!--\s*photo:\s*(.+?)\s*-->', absolute, text)
+    return text, parts
 
 
 def main(argv):

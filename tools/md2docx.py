@@ -5,6 +5,7 @@ import sys
 from docx import Document
 from docx.shared import Pt, Cm, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.enum.table import WD_ALIGN_VERTICAL
 from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
 
@@ -138,6 +139,67 @@ def left_bar(paragraph, color='9DB2D6'):
     pPr.append(pBdr)
 
 
+PHOTO_RE = re.compile(r'^<!--\s*photo:\s*(.+?)\s*-->$')
+
+
+def no_table_borders(table):
+    tblPr = table._tbl.tblPr
+    borders = OxmlElement('w:tblBorders')
+    for edge in ('top', 'left', 'bottom', 'right', 'insideH', 'insideV'):
+        el = OxmlElement(f'w:{edge}')
+        el.set(qn('w:val'), 'none')
+        el.set(qn('w:sz'), '0')
+        borders.append(el)
+    tblPr.append(borders)
+    layout = OxmlElement('w:tblLayout')
+    layout.set(qn('w:type'), 'fixed')
+    tblPr.append(layout)
+
+
+def render_header_with_photo(doc, block, photo_path, text_width=14.7, photo_width=2.9):
+    """Header block as a borderless table: text on the left, photo on the right."""
+    table = doc.add_table(rows=1, cols=2)
+    table.autofit = False
+    no_table_borders(table)
+    table.columns[0].width = Cm(text_width)
+    table.columns[1].width = Cm(photo_width)
+    text_cell, photo_cell = table.rows[0].cells
+    text_cell.width = Cm(text_width)
+    photo_cell.width = Cm(photo_width)
+    text_cell.vertical_alignment = WD_ALIGN_VERTICAL.TOP
+    photo_cell.vertical_alignment = WD_ALIGN_VERTICAL.TOP
+
+    first = True
+    for raw in block:
+        line = raw.rstrip()
+        if not line.strip():
+            continue
+        p = text_cell.paragraphs[0] if first else text_cell.add_paragraph()
+        first = False
+        p.paragraph_format.space_after = Pt(1)
+        p.paragraph_format.space_before = Pt(0)
+        p.paragraph_format.line_spacing = 1.0
+        if line.startswith('# '):
+            r = p.add_run(line[2:].strip())
+            r.bold = True
+            r.font.size = Pt(18)
+            r.font.name = FONT
+            r.font.color.rgb = ACCENT
+        elif line.startswith('**') and line.endswith('**'):
+            r = p.add_run(line[2:-2])
+            r.bold = True
+            r.font.size = Pt(11)
+            r.font.name = FONT
+            r.font.color.rgb = ACCENT2
+        else:
+            add_inline(p, line, size=9.4, color=GREY)
+
+    p = photo_cell.paragraphs[0]
+    p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+    p.paragraph_format.space_after = Pt(0)
+    p.add_run().add_picture(photo_path, width=Cm(photo_width - 0.4))
+
+
 def setup(doc, margin_lr=1.6, margin_tb=1.25):
     st = doc.styles['Normal']
     st.font.name = FONT
@@ -170,7 +232,24 @@ def build(md_path, docx_path):
 
     seen_h1 = False
     quote_buf = []
+
+    photo = None
+    for idx, raw in enumerate(lines):
+        m = PHOTO_RE.match(raw.strip())
+        if m:
+            photo = m.group(1)
+            del lines[idx]
+            break
+
     i = 0
+    if photo:
+        end = next(
+            (k for k, l in enumerate(lines) if l.startswith('## ') or l.strip() == '---'),
+            len(lines),
+        )
+        render_header_with_photo(doc, lines[:end], photo)
+        seen_h1 = True
+        i = end
 
     def flush_quote():
         nonlocal quote_buf
