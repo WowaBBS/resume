@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """Assemble one resume from its folder and build the DOCX.
 
 A resume folder holds topic files (`NN_slug.md`) and one experience folder
@@ -61,12 +61,18 @@ def readme_text(folder, lang, alt):
     if sep:
         head_lines = [l for l in head_text.split('\n') if l.strip() != '---']
         text = '\n'.join(head_lines).rstrip() + '\n\n## ' + rest
-    ru_links = f'{PDF_RU} · {DOCX_RU}'
-    en_links = f'{PDF_EN} · {DOCX_EN}'
-    # One-row table: language switcher left, download links right-aligned.
+    # GitHub strips CSS, so a table is the only way to put two things on one line
+    # left and right — and its borders look heavy. Two lines, no borders instead:
+    # the switcher on the left, download links right-aligned under it.
     switcher = README_HEAD[lang].format(alt=alt)
-    own_links = ru_links if lang == 'ru' else en_links
-    head = f'| {switcher} | {own_links} |\n|:--- | ---: |'
+    if lang == 'ru':
+        dl = ('<a href="savin_vladimir_cv.pdf">PDF</a> · '
+              '<a href="savin_vladimir_cv.docx">DOCX</a>')
+    else:
+        dl = ('<a href="savin_vladimir_cv_en.pdf">PDF</a> · '
+              '<a href="savin_vladimir_cv_en.docx">DOCX</a>')
+    label = 'Скачать' if lang == 'ru' else 'Download'
+    head = f'{switcher}\n\n<p align="right">{label}: {dl}</p>'
     if lang == 'ru':
         # GitHub draws a border under every H1. Declare the float after the
         # heading so that border is painted first and the portrait is not cut.

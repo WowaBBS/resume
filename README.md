@@ -1,5 +1,6 @@
-| **English** · [Русский](README.ru.md) | [PDF](savin_vladimir_cv_en.pdf) · [DOCX](savin_vladimir_cv_en.docx) |
-|:--- | ---: |
+**English** · [Русский](README.ru.md)
+
+<p align="right">Download: <a href="savin_vladimir_cv_en.pdf">PDF</a> · <a href="savin_vladimir_cv_en.docx">DOCX</a></p>
 
 # Vladimir Savin
 
