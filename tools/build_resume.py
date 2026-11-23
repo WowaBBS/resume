@@ -61,14 +61,21 @@ def readme_text(folder, lang, alt):
     if sep:
         head_lines = [l for l in head_text.split('\n') if l.strip() != '---']
         text = '\n'.join(head_lines).rstrip() + '\n\n## ' + rest
-    # GitHub strips CSS, so "left and right on one line" needs a table and its
-    # borders look heavy. One plain line instead: switcher, then download links.
-    switcher = README_HEAD[lang].format(alt=alt)
+    # GitHub strips CSS, so a per-element "left here, right there" needs a table
+    # (and its borders look heavy). A whole right-aligned line does work: `align`
+    # on a paragraph is kept. Inside HTML the markdown is not parsed, so links are
+    # plain <a> tags.
     if lang == 'ru':
-        dl = f'[PDF](savin_vladimir_cv.pdf) · [DOCX](savin_vladimir_cv.docx)'
+        line = ('<p align="right">'
+                '<b>Русский</b> · <a href="README.md">English</a> · '
+                '<a href="savin_vladimir_cv.pdf">PDF</a> · '
+                '<a href="savin_vladimir_cv.docx">DOCX</a></p>')
     else:
-        dl = f'[PDF](savin_vladimir_cv_en.pdf) · [DOCX](savin_vladimir_cv_en.docx)'
-    head = f'{switcher} · {dl}'
+        line = ('<p align="right">'
+                '<a href="README.ru.md">Русский</a> · <b>English</b> · '
+                '<a href="savin_vladimir_cv_en.pdf">PDF</a> · '
+                '<a href="savin_vladimir_cv_en.docx">DOCX</a></p>')
+    head = line
     if lang == 'ru':
         # GitHub draws a border under every H1. Declare the float after the
         # heading so that border is painted first and the portrait is not cut.

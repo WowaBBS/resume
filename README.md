@@ -1,4 +1,4 @@
-**English** · [Русский](README.ru.md) · [PDF](savin_vladimir_cv_en.pdf) · [DOCX](savin_vladimir_cv_en.docx)
+<p align="right"><a href="README.ru.md">Русский</a> · <b>English</b> · <a href="savin_vladimir_cv_en.pdf">PDF</a> · <a href="savin_vladimir_cv_en.docx">DOCX</a></p>
 
 # Vladimir Savin
 
