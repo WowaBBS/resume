@@ -1,4 +1,5 @@
-**English** · [Русский](README.ru.md)
+| **English** · [Русский](README.ru.md) | [PDF](savin_vladimir_cv_en.pdf) · [DOCX](savin_vladimir_cv_en.docx) |
+|:--- | ---: |
 
 # Vladimir Savin
 
@@ -97,8 +98,6 @@ Samara State University, 1999–2005. Faculty of Mechanics and Mathematics, Comp
 **Languages:** Russian — native; English — **B2** (technical documentation and written communication: confident; limited speaking practice).
 
 ---
-
-**Скачать / Download:** русское [PDF](savin_vladimir_cv.pdf) · [DOCX](savin_vladimir_cv.docx) · English [PDF](savin_vladimir_cv_en.pdf) · [DOCX](savin_vladimir_cv_en.docx)
 
 _Sources: `resume/` (ru), `resume-en/` (en). PDF and DOCX are rebuilt automatically
 whenever these files change._

@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 """Assemble one resume from its folder and build the DOCX.
 
 A resume folder holds topic files (`NN_slug.md`) and one experience folder
@@ -45,8 +45,6 @@ DOCX_EN = '[DOCX](savin_vladimir_cv_en.docx)'
 README_FOOTER = """
 ---
 
-**Скачать / Download:** русское {ru_sep} · English {en_sep}
-
 _Sources: `resume/` (ru), `resume-en/` (en). PDF and DOCX are rebuilt automatically
 whenever these files change._
 """
@@ -65,7 +63,10 @@ def readme_text(folder, lang, alt):
         text = '\n'.join(head_lines).rstrip() + '\n\n## ' + rest
     ru_links = f'{PDF_RU} · {DOCX_RU}'
     en_links = f'{PDF_EN} · {DOCX_EN}'
-    head = README_HEAD[lang].format(alt=alt)
+    # One-row table: language switcher left, download links right-aligned.
+    switcher = README_HEAD[lang].format(alt=alt)
+    own_links = ru_links if lang == 'ru' else en_links
+    head = f'| {switcher} | {own_links} |\n|:--- | ---: |'
     if lang == 'ru':
         # GitHub draws a border under every H1. Declare the float after the
         # heading so that border is painted first and the portrait is not cut.
@@ -76,7 +77,7 @@ def readme_text(folder, lang, alt):
             text = '\n'.join(lines)
         else:
             head += '\n' + PHOTO_BLOCK.strip()
-    footer = README_FOOTER.format(ru_sep=ru_links, en_sep=en_links)
+    footer = README_FOOTER
     return head + '\n\n' + text.rstrip('\n') + '\n' + footer
 
 
