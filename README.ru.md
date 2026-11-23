@@ -1,4 +1,5 @@
 **Русский** · [English](README.md)
+<p align="center"><img src="resume/photo.jpg" width="130" alt="Владимир Савин"></p>
 
 # Владимир Савин
 

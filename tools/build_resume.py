@@ -30,6 +30,11 @@ README_HEAD = {
     'ru': '**Русский** · [English]({alt})',
 }
 
+# Only the Russian page gets a portrait: the international page stays text-only.
+PHOTO_BLOCK = """
+<p align="center"><img src="resume/photo.jpg" width="130" alt="Владимир Савин"></p>
+"""
+
 PDF_RU = '[savin_vladimir_cv.pdf](savin_vladimir_cv.pdf)'
 PDF_EN = '[savin_vladimir_cv_en.pdf](savin_vladimir_cv_en.pdf)'
 
@@ -49,6 +54,8 @@ def readme_text(folder, lang, alt):
     text = '\n'.join(l for l in text.split('\n') if not l.strip().startswith('<!-- photo:'))
     first, second = (PDF_EN, PDF_RU) if lang == 'en' else (PDF_RU, PDF_EN)
     head = README_HEAD[lang].format(alt=alt)
+    if lang == 'ru':
+        head += '\n' + PHOTO_BLOCK.strip()
     footer = README_FOOTER.format(first=first, second=second)
     return head + '\n\n' + text.rstrip('\n') + '\n' + footer
 
