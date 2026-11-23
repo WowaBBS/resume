@@ -6,8 +6,6 @@
 
 Remote (EU / worldwide) · open to occasional travel · +7 917 143-51-22 · wowabbs+hh1@gmail.com · Telegram @wowabb · github.com/WowaBBS
 
----
-
 ## Summary
 
 Tech Lead / Senior C++ Programmer with 25 years in commercial software and 14 years in game development. Credited as Lead Programmer on INSOMNIA: The Ark, then 6 years 7 months as Tech Lead at PAN GAMES on Unreal Engine (UE4 → UE5). Owned the architecture of ~45 subsystems, led a team of up to 30 engineers (6 C++ / 15 Blueprint) and shipped to five platforms. Strong in gameplay systems, client–server networking, developer tools, and backend services for online games. Comfortable diving into large unfamiliar codebases and refactoring legacy code without a rewrite. Outside work: reverse engineering the Gothic engine (contributor to GEngine).

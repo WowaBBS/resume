@@ -56,6 +56,13 @@ def readme_text(folder, lang, alt):
     text, _ = assemble(folder)
     # The photo directive carries a local absolute path — keep it out of README.
     text = '\n'.join(l for l in text.split('\n') if not l.strip().startswith('<!-- photo:'))
+    # The floated portrait stays active while the header rule is drawn, and the
+    # line would cut through the picture. Drop that rule from the web page only;
+    # the DOCX/PDF keep it.
+    head_text, sep, rest = text.partition('## ')
+    if sep:
+        head_lines = [l for l in head_text.split('\n') if l.strip() != '---']
+        text = '\n'.join(head_lines).rstrip() + '\n\n## ' + rest
     ru_links = f'{PDF_RU} · {DOCX_RU}'
     en_links = f'{PDF_EN} · {DOCX_EN}'
     head = README_HEAD[lang].format(alt=alt)
