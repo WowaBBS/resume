@@ -67,7 +67,15 @@ def readme_text(folder, lang, alt):
     en_links = f'{PDF_EN} · {DOCX_EN}'
     head = README_HEAD[lang].format(alt=alt)
     if lang == 'ru':
-        head += '\n' + PHOTO_BLOCK.strip()
+        # GitHub draws a border under every H1. Declare the float after the
+        # heading so that border is painted first and the portrait is not cut.
+        lines = text.split('\n')
+        h1 = next((i for i, l in enumerate(lines) if l.startswith('# ')), None)
+        if h1 is not None:
+            lines[h1 + 1:h1 + 1] = ['', PHOTO_BLOCK.strip()]
+            text = '\n'.join(lines)
+        else:
+            head += '\n' + PHOTO_BLOCK.strip()
     footer = README_FOOTER.format(ru_sep=ru_links, en_sep=en_links)
     return head + '\n\n' + text.rstrip('\n') + '\n' + footer
 

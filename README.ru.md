@@ -1,7 +1,8 @@
 **Русский** · [English](README.md)
-<img src="resume/photo.jpg" width="140" align="right" alt="Владимир Савин">
 
 # Владимир Савин
+
+<img src="resume/photo.jpg" width="140" align="right" alt="Владимир Савин">
 
 **Tech Lead / Senior C++ Programmer — Unreal Engine**
 
