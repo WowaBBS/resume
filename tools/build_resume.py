@@ -61,18 +61,14 @@ def readme_text(folder, lang, alt):
     if sep:
         head_lines = [l for l in head_text.split('\n') if l.strip() != '---']
         text = '\n'.join(head_lines).rstrip() + '\n\n## ' + rest
-    # GitHub strips CSS, so a table is the only way to put two things on one line
-    # left and right — and its borders look heavy. Two lines, no borders instead:
-    # the switcher on the left, download links right-aligned under it.
+    # GitHub strips CSS, so "left and right on one line" needs a table and its
+    # borders look heavy. One plain line instead: switcher, then download links.
     switcher = README_HEAD[lang].format(alt=alt)
     if lang == 'ru':
-        dl = ('<a href="savin_vladimir_cv.pdf">PDF</a> · '
-              '<a href="savin_vladimir_cv.docx">DOCX</a>')
+        dl = f'[PDF](savin_vladimir_cv.pdf) · [DOCX](savin_vladimir_cv.docx)'
     else:
-        dl = ('<a href="savin_vladimir_cv_en.pdf">PDF</a> · '
-              '<a href="savin_vladimir_cv_en.docx">DOCX</a>')
-    label = 'Скачать' if lang == 'ru' else 'Download'
-    head = f'{switcher}\n\n<p align="right">{label}: {dl}</p>'
+        dl = f'[PDF](savin_vladimir_cv_en.pdf) · [DOCX](savin_vladimir_cv_en.docx)'
+    head = f'{switcher} · {dl}'
     if lang == 'ru':
         # GitHub draws a border under every H1. Declare the float after the
         # heading so that border is painted first and the portrait is not cut.
