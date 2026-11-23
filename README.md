@@ -100,7 +100,7 @@ Samara State University, 1999–2005. Faculty of Mechanics and Mathematics, Comp
 
 ---
 
-PDF: [savin_vladimir_cv_en.pdf](savin_vladimir_cv_en.pdf) · [savin_vladimir_cv.pdf](savin_vladimir_cv.pdf)
+**Скачать / Download:** русское [PDF](savin_vladimir_cv.pdf) · [DOCX](savin_vladimir_cv.docx) · English [PDF](savin_vladimir_cv_en.pdf) · [DOCX](savin_vladimir_cv_en.docx)
 
-_Sources: `resume/` (ru), `resume-en/` (en). The PDFs are rebuilt automatically
+_Sources: `resume/` (ru), `resume-en/` (en). PDF and DOCX are rebuilt automatically
 whenever these files change._

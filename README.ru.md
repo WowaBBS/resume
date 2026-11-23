@@ -1,5 +1,5 @@
 **Русский** · [English](README.md)
-<p align="center"><img src="resume/photo.jpg" width="130" alt="Владимир Савин"></p>
+<img src="resume/photo.jpg" width="140" align="right" alt="Владимир Савин">
 
 # Владимир Савин
 
@@ -102,7 +102,7 @@ Tech Lead / Senior C++ Programmer: 25 лет в коммерческой раз�
 
 ---
 
-PDF: [savin_vladimir_cv.pdf](savin_vladimir_cv.pdf) · [savin_vladimir_cv_en.pdf](savin_vladimir_cv_en.pdf)
+**Скачать / Download:** русское [PDF](savin_vladimir_cv.pdf) · [DOCX](savin_vladimir_cv.docx) · English [PDF](savin_vladimir_cv_en.pdf) · [DOCX](savin_vladimir_cv_en.docx)
 
-_Sources: `resume/` (ru), `resume-en/` (en). The PDFs are rebuilt automatically
+_Sources: `resume/` (ru), `resume-en/` (en). PDF and DOCX are rebuilt automatically
 whenever these files change._

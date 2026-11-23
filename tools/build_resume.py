@@ -31,19 +31,23 @@ README_HEAD = {
 }
 
 # Only the Russian page gets a portrait: the international page stays text-only.
+# `align="right"` on <img> makes the text wrap around the picture; if GitHub ever
+# strips it, the fallback is a plain left-aligned image above the name.
 PHOTO_BLOCK = """
-<p align="center"><img src="resume/photo.jpg" width="130" alt="Владимир Савин"></p>
+<img src="resume/photo.jpg" width="140" align="right" alt="Владимир Савин">
 """
 
-PDF_RU = '[savin_vladimir_cv.pdf](savin_vladimir_cv.pdf)'
-PDF_EN = '[savin_vladimir_cv_en.pdf](savin_vladimir_cv_en.pdf)'
+PDF_RU = '[PDF](savin_vladimir_cv.pdf)'
+PDF_EN = '[PDF](savin_vladimir_cv_en.pdf)'
+DOCX_RU = '[DOCX](savin_vladimir_cv.docx)'
+DOCX_EN = '[DOCX](savin_vladimir_cv_en.docx)'
 
 README_FOOTER = """
 ---
 
-PDF: {first} · {second}
+**Скачать / Download:** русское {ru_sep} · English {en_sep}
 
-_Sources: `resume/` (ru), `resume-en/` (en). The PDFs are rebuilt automatically
+_Sources: `resume/` (ru), `resume-en/` (en). PDF and DOCX are rebuilt automatically
 whenever these files change._
 """
 
@@ -52,11 +56,12 @@ def readme_text(folder, lang, alt):
     text, _ = assemble(folder)
     # The photo directive carries a local absolute path — keep it out of README.
     text = '\n'.join(l for l in text.split('\n') if not l.strip().startswith('<!-- photo:'))
-    first, second = (PDF_EN, PDF_RU) if lang == 'en' else (PDF_RU, PDF_EN)
+    ru_links = f'{PDF_RU} · {DOCX_RU}'
+    en_links = f'{PDF_EN} · {DOCX_EN}'
     head = README_HEAD[lang].format(alt=alt)
     if lang == 'ru':
         head += '\n' + PHOTO_BLOCK.strip()
-    footer = README_FOOTER.format(first=first, second=second)
+    footer = README_FOOTER.format(ru_sep=ru_links, en_sep=en_links)
     return head + '\n\n' + text.rstrip('\n') + '\n' + footer
 
 
