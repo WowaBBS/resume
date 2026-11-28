@@ -12,7 +12,7 @@ Telegram @wowabb · github.com/WowaBBS
 
 ## О себе
 
-Tech Lead / Senior C++ Programmer: 25 лет в коммерческой разработке, 14 лет в играх. В титрах INSOMNIA: The Ark — Lead Programmer, 6 лет 7 месяцев — Tech Lead в PAN GAMES на Unreal Engine (UE4 → UE5). Отвечал за архитектуру ~45 подсистем, команду до 30 человек (6 C++ / 15 Blueprint) и релиз на пяти платформах. Делаю gameplay- и клиент-серверные системы, инструменты для разработчиков и бэкенд сетевых игр. Быстро разбираюсь в чужом коде и переделываю legacy без переписывания проекта. Вне работы — реверс-инжиниринг движка Gothic (участие в GEngine).
+Tech Lead / Senior C++ Programmer: 25 лет в коммерческой разработке, 14 лет в играх. В титрах INSOMNIA: The Ark — Lead Programmer, 6 лет 7 месяцев — Tech Lead в PAN GAMES на Unreal Engine (UE4 → UE5). Отвечал за архитектуру ~45 подсистем, команду до 30 человек (6 C++ / 15 Blueprint) и релиз на пяти платформах. Делаю gameplay- и клиент-серверные системы, инструменты для разработчиков и бэкенд сетевых игр. Быстро разбираюсь в чужом коде и переделываю legacy без переписывания проекта.
 
 ## Ключевые компетенции
 
@@ -91,7 +91,7 @@ Tech Lead / Senior C++ Programmer: 25 лет в коммерческой раз�
 **BULLET YEETERS** — [Steam](https://store.steampowered.com/app/3624020/BULLET_YEETERS) · [Epic Games Store](https://store.epicgames.com/en-US/p/bullet-yeeters-438176)
 **INSOMNIA: The Ark** — [Steam](https://store.steampowered.com/app/783170/INSOMNIA_The_Ark) · [титры: Lead Programmer](https://www.mobygames.com/game/114363/insomnia-the-ark/credits/windows/)
 **Exoplanet First Contact** — [Steam](https://store.steampowered.com/app/531660/Exoplanet_First_Contact/)
-**GEngine** — участие в реверс-инжиниринге движка Gothic. **WBuild.php** — [github.com/WowaBBS/WBuild.php](https://github.com/WowaBBS/WBuild.php)
+**WBuild.php** — [github.com/WowaBBS/WBuild.php](https://github.com/WowaBBS/WBuild.php) — система сборки Exoplanet First Contact.
 
 ## Образование
 
